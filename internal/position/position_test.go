@@ -84,9 +84,11 @@ var _ = Describe("Position", func() {
 						Cost:     6090,
 						Quantity: 40,
 					},
-					Value:            8000,
-					DayChange:        2000,
-					DayChangePercent: 50,
+					Value:              8000,
+					TotalChange:        1909.9999999999998,
+					TotalChangePercent: 31.362889983579635,
+					DayChange:          2000,
+					DayChangePercent:   50,
 				},
 			}
 			Expect(output).To(Equal(expected))

@@ -101,13 +101,18 @@ func item(q quote.Quote, p position.Position, width int) string {
 				Align: RightAlign,
 			},
 			Cell{
-				Width: 25,
-				Text:  valueText(p.Value),
+				Width: 28,
+				Text:  styleNeutral("Holding Value: ") + valueText(p.Value),
 				Align: RightAlign,
 			},
 			Cell{
-				Width: 25,
-				Text:  styleNeutral(ConvertFloatToString(q.Price)),
+				Width: 28,
+				Text:  styleNeutral("Today Holding Change"),
+				Align: RightAlign,
+			},
+			Cell{
+				Width: 28,
+				Text:  styleNeutral("Current Ask: ") + styleNeutral(ConvertFloatToString(q.Price)),
 				Align: RightAlign,
 			},
 		),
@@ -117,12 +122,17 @@ func item(q quote.Quote, p position.Position, width int) string {
 				Text: styleNeutralFaded(q.ShortName),
 			},
 			Cell{
-				Width: 25,
+				Width: 28,
+				Text:  valueChangeText(p.TotalChange, p.TotalChangePercent),
+				Align: RightAlign,
+			},
+			Cell{
+				Width: 28,
 				Text:  valueChangeText(p.DayChange, p.DayChangePercent),
 				Align: RightAlign,
 			},
 			Cell{
-				Width: 25,
+				Width: 28,
 				Text:  quoteChangeText(q.Change, q.ChangePercent),
 				Align: RightAlign,
 			},
